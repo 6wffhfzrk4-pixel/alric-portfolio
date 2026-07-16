@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Palette monochrome ---- */
+  --color-paper: #ffffff; /* fond principal */
+  --color-ink: #0a0a0a; /* texte & éléments sombres */
+  --color-ink-soft: #121212; /* sections sombres (footer) */
+  --color-grey-700: #4b4b4b; /* texte secondaire */
+  --color-grey-500: #8a8a8a; /* labels, captions */
+  --color-grey-300: #d6d6d6; /* bordures */
+  --color-grey-100: #f4f4f4; /* fonds légers / cartes */
+
+  /* ---- Typographie ---- */
+  --font-display: var(--font-archivo);
+  --font-body: var(--font-inter);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Sélection monochrome */
+::selection {
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+/* Scrollbar discrète */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6d6d6;
+  border-radius: 9999px;
+  border: 2px solid #f4f4f4;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8a8a8a;
+}
+
+/* ---- Titres display ---- */
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+
+/* Paragraphes descriptifs : MAJ, petits, espacés, gris */
+.copy-mono {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-grey-700);
+  line-height: 1.6;
+}
+
+/* ---- Effet "chrome" métallique sur le texte ---- */
+.text-chrome {
+  background: linear-gradient(
+    180deg,
+    #eaeaea 0%,
+    #c9c9c9 22%,
+    #6e6e6e 55%,
+    #2b2b2b 82%,
+    #0a0a0a 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grille de fond légère */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Préserve le 3D pour les cartes en perspective */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* ---- Curseur personnalisé (immersif) ---- */
+@media (hover: hover) and (pointer: fine) {
+  .has-custom-cursor,
+  .has-custom-cursor * {
+    cursor: none;
+  }
+}
+
+/* Marquee infini */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+  .has-custom-cursor,
+  .has-custom-cursor * {
+    cursor: auto;
+  }
+}
+
+/* ---- Lenis (smooth scroll) ---- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
