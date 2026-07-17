@@ -20,21 +20,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Alric — Designer UI/UX & Développeur",
+  title: "Alric — Designer UI/UX",
   description:
-    "Portfolio d'Alric, designer UI/UX & développeur freelance. Je conçois des interfaces et des expériences digitales nettes, haut de gamme et centrées utilisateur.",
+    "Portfolio d'Alric, designer UI/UX freelance. Je conçois des interfaces et des expériences digitales nettes, haut de gamme et centrées utilisateur.",
   keywords: [
     "Designer UI/UX",
-    "Développeur freelance",
+    "UX Research",
     "Web Design",
     "Landing Page",
     "UI Design Figma",
-    "Webflow",
+    "WordPress",
     "Portfolio",
   ],
   authors: [{ name: "Alric" }],
   openGraph: {
-    title: "Alric — Designer UI/UX & Développeur",
+    title: "Alric — Designer UI/UX",
     description:
       "Je conçois des interfaces & des expériences digitales nettes, haut de gamme et centrées utilisateur.",
     type: "website",
