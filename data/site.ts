@@ -34,7 +34,7 @@ export const nav = [
 
 export const stats = [
   { value: 10, suffix: "+", label: "PROJETS RÉALISÉS" },
-  { value: 2, suffix: "", label: "FORMATIONS ACTIVES" },
+  { value: 2, suffix: "", label: "FORMATIONS SUIVIES" },
   { value: 2, suffix: "", label: "HACKATHONS" },
 ];
 
